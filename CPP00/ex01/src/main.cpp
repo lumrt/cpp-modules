@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:01:05 by lumaret           #+#    #+#             */
-/*   Updated: 2025/01/21 12:54:08 by lumaret          ###   ########.fr       */
+/*   Updated: 2025/01/21 15:40:14 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
     i = 0;
     while (42)
     {
-        std::cout << "Enter a command:";
+        std::cout << "\033[1;94m >> Enter a command:\033[0m";
         if (!std::getline(std::cin, command)) {
             std::cout << "\nEOF detected. Exiting...\n";
             break;
@@ -70,6 +70,6 @@ int main()
         else if (command.empty())
             continue ;
         else
-            std::cout << "Not a valid command! Try again" << std::endl;
+            std::cout << "\e[31mNot a valid command! Try again" << std::endl;
     }
 }

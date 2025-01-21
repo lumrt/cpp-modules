@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:15:14 by lumaret           #+#    #+#             */
-/*   Updated: 2025/01/21 12:58:23 by lumaret          ###   ########.fr       */
+/*   Updated: 2025/01/21 16:21:44 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,22 @@ std::string  add_info(std::string msg)
 {
     std::string dest;
     
+    msg = "\e[90;3;11m\t-> "+msg+"\e[5m: \e[0m";
     std::cout << msg;
     while (42)
     {
         if (!std::getline(std::cin, dest))
         {
             std::cout << "\nEOF detected. Exiting...\n";
-            break;
+            if (std::cin.eof())
+                exit(0);
         }
         // cleaning convention
         dest.erase(0, dest.find_first_not_of(" \t\v\f\r"));
         while (isspace(dest[dest.length() - 1]))
             dest.erase(dest.find_last_not_of(" \t\v\r\f") + 1, dest[dest.length() - 1]);
         if (dest.empty())
-            std::cout << "Empty field not valid! Please, try again." << std::endl << msg;
+            std::cout << "\e[31m\tEmpty field not valid! Please, try again." << std::endl << msg;
         else
             break ;
     }
@@ -57,9 +59,9 @@ std::string  add_info(std::string msg)
 
 PhoneBook    PhoneBook::add_i(PhoneBook pb, int i)
 {
-    Contact new_contact(add_info("First name:"), add_info("Last name:"),
-                        add_info("Nickname:"),add_info("Phone number:"),
-                        add_info("Darkest secret:"));
+    Contact new_contact(add_info("First name"), add_info("Last name"),
+                        add_info("Nickname"),add_info("Phone number"),
+                        add_info("Darkest secret"));
     pb.contacts[i] = new_contact;
     return pb;
 }

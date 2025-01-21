@@ -6,7 +6,7 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 14:04:47 by lumaret           #+#    #+#             */
-/*   Updated: 2025/01/19 15:28:19 by lumaret          ###   ########.fr       */
+/*   Updated: 2025/01/21 14:04:11 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include <cstdlib>
 
 class Contact
 {

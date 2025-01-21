@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/19 14:25:20 by lumaret           #+#    #+#              #
-#    Updated: 2025/01/21 14:06:31 by lumaret          ###   ########.fr        #
+#    Created: 2025/01/21 15:49:24 by lumaret           #+#    #+#              #
+#    Updated: 2025/01/21 16:16:21 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	phonebook
+NAME			=	Zombie
 
-SRC_DIR		=	./src/
+SRC_DIR		=	srcs/
 OBJ_DIR		=	obj/
 
 INCS_DIR	=	includes
@@ -20,8 +20,9 @@ MAIN_INC	= -I $(INCS_DIR)
 INCS		=	$(shell find $(INCS_DIR) -type f -name "*.hpp")
 
 SRC			=	main.cpp \
-				PhoneBook.cpp \
-				Contact.cpp
+				Zombie.cpp \
+				newZombie.cpp \
+				randomChump.cpp
 				
 OBJ			=	$(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
 
