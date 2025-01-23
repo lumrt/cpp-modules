@@ -5,30 +5,43 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/22 13:31:03 by lumaret           #+#    #+#              #
-#    Updated: 2025/01/22 13:51:43 by lumaret          ###   ########.fr        #
+#    Created: 2025/01/21 15:49:24 by lumaret           #+#    #+#              #
+#    Updated: 2025/01/23 16:52:44 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = replace
-SRC = main.cpp FileReplace.cpp
-OBJ = $(SRC:.cpp=.o)
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME			=	ex04
 
-all: $(NAME)
+SRC_DIR		=	srcs/
+OBJ_DIR		=	obj/
 
-$(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
+INCS_DIR	=	includes
+MAIN_INC	= -I $(INCS_DIR)
+INCS		=	$(shell find $(INCS_DIR) -type f -name "*.hpp")
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+SRC			=	main.cpp \
+				FileReplace.cpp \
+				
+OBJ			=	$(addprefix $(OBJ_DIR), $(SRC:.cpp=.o))
 
-clean:
-	rm -f $(OBJ)
+CC				=	clang++
+CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -g3
 
-fclean: clean
-	rm -f $(NAME)
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.cpp
+		@mkdir -p $(OBJ_DIR)
+		$(CC) ${CFLAGS}  $(MAIN_INC) -o $@ -c $<
 
-re: fclean all
+$(NAME)		:	$(OBJ) $(INCS)
+		$(CC) $(CFLAGS) $(OBJ) $(MAIN_INC) -o $(NAME)
+					
+all			:	$(NAME)
 
+clean		:
+		@rm -rf $(OBJ_DIR)
+
+fclean		:	clean
+		@rm -rf $(NAME)
+
+re			:	fclean	all
+
+.PHONY		:	all clean fclean re

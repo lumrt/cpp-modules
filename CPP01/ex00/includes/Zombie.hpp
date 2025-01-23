@@ -6,9 +6,12 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:51:52 by lumaret           #+#    #+#             */
-/*   Updated: 2025/01/21 16:48:32 by lumaret          ###   ########.fr       */
+/*   Updated: 2025/01/23 16:56:56 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 #include <string>
@@ -30,3 +33,5 @@ public:
 
 void randomChump(std::string name);
 Zombie* newZombie(std::string name);
+
+#endif

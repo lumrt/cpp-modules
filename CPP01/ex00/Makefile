@@ -6,11 +6,11 @@
 #    By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/21 15:49:24 by lumaret           #+#    #+#              #
-#    Updated: 2025/01/21 16:16:21 by lumaret          ###   ########.fr        #
+#    Updated: 2025/01/23 16:57:04 by lumaret          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	Zombie
+NAME			=	ex00
 
 SRC_DIR		=	srcs/
 OBJ_DIR		=	obj/
