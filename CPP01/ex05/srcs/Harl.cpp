@@ -6,11 +6,21 @@
 /*   By: lumaret <lumaret@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 12:10:03 by lumaret           #+#    #+#             */
-/*   Updated: 2025/01/28 12:30:08 by lumaret          ###   ########.fr       */
+/*   Updated: 2025/01/28 12:37:28 by lumaret          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+#include "Harl.hpp"
+
+Harl::Harl() {
+    std::cout << "Harl object created!" << std::endl;
+}
+
+Harl::~Harl() {
+    std::cout << "Harl object destroyed!" << std::endl;
+}
 
 void Harl::debug(void)
 {
